@@ -5,8 +5,8 @@ class Employee
     @id = id
     @basic_salary = basic_salary
   end
-  def calcul_hours_bonus( num_hours)
-    return ((@basic_salary.to_f / 30).to_f / 8) * num_hours
+  def calcul_hours_bonus(num_hours)
+    raise  NotImplementedError, "calcul_hours_bonus must be implemented by classes that inheret from this class"
   end
   def display
     puts "#{@id } #{ @name}"
