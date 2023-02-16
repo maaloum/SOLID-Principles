@@ -10,5 +10,6 @@ stock = Stock.new
 invoice = CreateInvoice.new
 shopcart.add_item?(item)
 shopcart.add_item?(item2)
-shopcart.cartItems
+p shopcart.remove_item?(item2)
+p shopcart.cartItems
 invoice.create_invoice(shopcart)

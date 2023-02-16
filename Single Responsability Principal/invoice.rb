@@ -15,9 +15,9 @@ class CreateInvoice
     def print_invoice
       p @total
     end
-    # get customer data
-    # save to data base
-    # send invoice to customer email
+    # get customer data   -2
+    # save to data base    -3
+    # send invoice to customer email  -4
 
 
 end

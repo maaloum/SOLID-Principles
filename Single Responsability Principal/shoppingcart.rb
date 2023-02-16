@@ -8,16 +8,19 @@ class ShoppingCart < Stock
     @cartItems = []
   end
 
-  def remove_item(item)
-    p 'I am in'
+  def remove_item?(item)
     if(cartItems.include?(item))
-      cartItems.remove(item)
+      cartItems.delete(item)
+      return true
+    else
+      return false
     end
+
   end
   def add_item?(item)
     #check the available quantity in the store
     stock = Stock.new
-    stock.items.each {|i|
+    stock.items.each {|i|       # -1
         if(i.code == item.code )
           if(i.quantity > item.quantity)
             @cartItems.push(item)
