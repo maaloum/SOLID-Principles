@@ -17,12 +17,15 @@ class ShoppingCart < Stock
   def add_item?(item)
     #check the available quantity in the store
     stock = Stock.new
-    quantity_in_stock = stock[item].quantity
-    if(quantity_in_stock > item.quantity)
-      @cartItems.push(item)
-      return true
-    else
-      return flase
-    end
+    stock.items.each {|i|
+        if(i.code == item.code )
+          if(i.quantity > item.quantity)
+            @cartItems.push(item)
+            return true
+          else
+            return false
+          end
+        end
+    }
   end
 end
