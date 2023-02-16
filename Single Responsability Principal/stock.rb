@@ -9,4 +9,16 @@ class Stock < Item
         Item.new("173", 121, 11),
         Item.new("103", 29, 19)]
     end
+
+    def check_quantity?(item)
+      @items.each {|i|
+        if(i.code == item.code )
+          if(i.quantity > item.quantity)
+            return true
+          else
+            return false
+          end
+        end
+      }
+    end
 end
