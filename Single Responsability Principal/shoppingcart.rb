@@ -1,7 +1,7 @@
 require_relative 'item'
 require_relative 'stock'
 
-class ShoppingCart < Stock
+class ShoppingCart
   attr_accessor :cartItems
   def initialize
     super()
@@ -14,8 +14,7 @@ class ShoppingCart < Stock
     end
   end
   def add_item(item)
-    stock = Stock.new
-    if(stock.check_quantity?(item))
+    if(Stock.new.check_quantity?(item))
       @cartItems.push(item)
     end
   end
